@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: org.example.AppTest
+Test set: org.example.TestClass
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in org.example.TestClass
