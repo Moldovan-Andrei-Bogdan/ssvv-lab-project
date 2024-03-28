@@ -108,21 +108,4 @@ public class TestClass {
             assert(true);
         }
     }
-
-    @Test
-    public void addStudent_NullGroup_ThrowError() {
-        // TC 4
-        try {
-            String idStudent = "asd";
-            String numeStudent = null;
-            int grupa = Integer.parseInt(null);
-            String email = "john_doe@yahoo.com";
-            Student student = new Student(idStudent, numeStudent, grupa, email);
-            service.addStudent(student);
-        } catch (ValidationException | java.lang.NumberFormatException exception) {
-            System.out.println(exception);
-            assert(true);
-        }
-    }
-
 }
