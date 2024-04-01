@@ -4,6 +4,7 @@ package org.example;
 //import junit.framework.TestSuite;
 
 import org.example.domain.Student;
+import org.example.domain.Tema;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -105,6 +106,39 @@ public class TestClass {
             service.addStudent(student);
         } catch (ValidationException exception) {
             System.out.println(exception);
+            assert(true);
+        }
+    }
+
+    // White box testing
+    @Test
+    public void addTema_ValidData_CreateSuccessfully() {
+        String nrTema = "100";
+        String descriere = "test";
+        int deadline = 12;
+        int primire = 1;
+        Tema tema = new Tema(nrTema, descriere, deadline, primire);
+        try {
+            service.addTema(tema);
+            assert(true);
+        } catch (ValidationException exception) {
+            System.out.println("Validation exception: " + exception.getMessage());
+            assert(false);
+        }
+    }
+
+    @Test
+    public void addTema_Invalid_nrTema_duplicate_ThrowsError() {
+        String nrTema = "100";
+        String descriere = "test";
+        int deadline = 12;
+        int primire = 1;
+        Tema tema = new Tema(nrTema, descriere, deadline, primire);
+        try {
+            Tema response = service.addTema(tema);
+            assert(tema == response);
+        } catch (ValidationException exception) {
+            System.out.println("Validation exception: " + exception.getMessage());
             assert(true);
         }
     }
